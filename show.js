@@ -9,10 +9,7 @@ infrajs.show_init=function(){
 	infrajs.htmlb.webkit=/WebKit/.test(navigator.userAgent);
 	infrajs.htmlb.safari=(infrajs.htmlb.webkit&&!infrajs.htmlb.chrome);	
 }
-infra.wait(infrajs,'oninit',function(layer){
-	//show
-	infrajs.show_init();
-});
+
 
 infrajs.show_animate=function(layer){
 	if(!layer.showanimate)return;
