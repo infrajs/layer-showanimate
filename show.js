@@ -52,7 +52,7 @@ infrajs.htmlShow=function(obj, x) {
 		infrajs.htmlSetOpacity(obj,op);
 		infrajs.htmlsT=setTimeout(function(){
 			infrajs.htmlShow(obj,x);
-		},10);
+		},30);
 	}
 }
 infrajs.htmlHide=function(obj, x) {
