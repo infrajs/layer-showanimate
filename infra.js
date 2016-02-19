@@ -10,7 +10,9 @@ Event.handler('layer.oncheck', function (layer){
 
 Event.handler('layer.onshow', function (layer){//Анимация только для первого показываемого слоя, вначале это корневой.. потом это текстовый в центре ожидается
 	//show
+	
 	infrajs.show_div(layer);
+	
 },'showanimate:dom');
 
 

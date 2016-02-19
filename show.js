@@ -33,9 +33,10 @@ infrajs.show_div=function(layer){
 	var obj = document.getElementById(layer.div);
 	if(!obj)return;
 	infrajs.htmlSetOpacity(obj,0);
+	
 	setTimeout(function(){//Ждём когда оттормозится, а то юзер не заметит эфекта
 		infrajs.htmlShow(obj,1);
-	},1);
+	},50);
 }
 infrajs.htmlSetOpacity=function(obj,op){
 	if(op<0)op=0;
