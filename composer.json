@@ -1,7 +1,5 @@
 {
 	"name": "infrajs/layer-showanimate",
-	"license": "GPL3",
-	"autoload": {
-		"psr-4": { "infrajs\\layer\\showanimate\\": "/" }
-	}
+	"homepage":"https://github.com/infrajs/layer-showanimate",
+	"license": "GPL3"
 }
