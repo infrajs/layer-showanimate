@@ -12,31 +12,39 @@ infrajs.show_init=function(){
 
 
 infrajs.show_animate=function(layer){
-	if(!layer.showanimate)return;
-	infrajs.run(layer,function(l){
-		if(l.showanimate!=undefined)return;
-		l.showanimate=true;
+	var val = Layer.pop(layer,'showanimate');
+	if (!val) return;
+	Controller.run(layer, function (l) {
+		if (l.showanimate != undefined) return;
+		l.showanimate = true;
 	});
 }
 
 
 infrajs.show_div=function(layer){
-	var store=infrajs.store();
-	if(!layer.showanimate)return;
+	var store = Controller.store();
+	if (!layer.showanimate) return;
 	
-	if(store.counter==1)return;
-	if((infrajs.htmlb.IE&&infrajs.htmlb.IE>8))return;
+	if (store.counter == 1) return;
+	if ((infrajs.htmlb.IE && infrajs.htmlb.IE>8)) return;
 
 	//if(infrajs.htmlsomelayeranimate)return;
 	//infrajs.htmlsomelayeranimate=true;
 
 	var obj = document.getElementById(layer.div);
-	if(!obj)return;
-	infrajs.htmlSetOpacity(obj,0);
+	if (!obj) return;
+
+	//$(obj).css('opacity',0);
+	$(obj).fadeOut(0);
+	setTimeout( function () {
+		$(obj).fadeIn(400);
+	}, 50);
+
+	/*infrajs.htmlSetOpacity(obj,0);
 	
 	setTimeout(function(){//Ждём когда оттормозится, а то юзер не заметит эфекта
 		infrajs.htmlShow(obj,1);
-	},50);
+	},50);*/
 }
 infrajs.htmlSetOpacity=function(obj,op){
 	if(op<0)op=0;
