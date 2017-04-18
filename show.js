@@ -34,11 +34,19 @@ infrajs.show_div=function(layer){
 	var obj = document.getElementById(layer.div);
 	if (!obj) return;
 
+	//var val = Layer.pop(layer,'showanimating');
+	//if (val) return;
+	//layer.showanimating = true;
+	infrajs.htmlSetOpacity(obj,0);
 	//$(obj).css('opacity',0);
-	$(obj).fadeOut(0);
+	//$(obj).fadeOut(0);
 	setTimeout( function () {
-		$(obj).fadeIn(400);
-	}, 50);
+		$(obj).animate({
+			"opacity":1
+		}, 400,'swing', function () {
+			//delete layer.showanimating;
+		});
+	}, 100);
 
 	/*infrajs.htmlSetOpacity(obj,0);
 	
