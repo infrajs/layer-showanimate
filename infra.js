@@ -16,11 +16,10 @@ Event.handler('Layer.onshow', function (layer){
 	if (store.counter == 1) return;
 	var obj = document.getElementById(layer.div);
 	if (!obj) return;
-
 	obj.style.transition = 'none'
 	obj.style.opacity = 0
 	setTimeout(() => {
-		obj.style.transition = 'opacity 500ms'	
+		obj.style.transition = 'opacity 300ms cubic-bezier(0.75, 0, 0.25, 1)'	
 		obj.style.opacity = 1
 	},1)
 	
