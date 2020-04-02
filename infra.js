@@ -1,22 +1,27 @@
-Event.one('Controller.oninit', function(layer) {
-	//show
-	infrajs.show_init();
-},'showanimate');
 
 Event.handler('Layer.oncheck', function (layer){
-	//show
-	infrajs.show_animate(layer);
+	
+	var val = Layer.pop(layer,'showanimate');
+	if (!val) return;
+	Controller.run(layer, function (l) {
+		if (l.showanimate != undefined) return;
+		l.showanimate = true;
+	});
 },'showanimate:tpl');
 
-Event.handler('Layer.onshow', function (layer){//Анимация только для первого показываемого слоя, вначале это корневой.. потом это текстовый в центре ожидается
-	//show
-	
-	infrajs.show_div(layer);
+Event.handler('Layer.onshow', function (layer){
+
+	if (!layer.showanimate) return;
+	var store = Controller.store();
+	if (store.counter == 1) return;
+	var obj = document.getElementById(layer.div);
+	if (!obj) return;
+
+	obj.style.transition = 'none'
+	obj.style.opacity = 0
+	setTimeout(() => {
+		obj.style.transition = 'opacity 500ms'	
+		obj.style.opacity = 1
+	},1)
 	
 },'showanimate:dom');
-
-
-Event.handler('Controller.onshow', function () {
-	//show
-	infrajs.htmlsomelayeranimate=false;
-}, 'showanimate');
