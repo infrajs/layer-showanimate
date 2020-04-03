@@ -19,7 +19,7 @@ Event.handler('Layer.onshow', function (layer){
 	obj.style.transition = 'none'
 	obj.style.opacity = 0
 	setTimeout(() => {
-		obj.style.transition = 'opacity 300ms cubic-bezier(0.75, 0, 0.25, 1)'	
+		obj.style.transition = 'opacity 200ms cubic-bezier(0.75, 0, 0.25, 1)'	
 		obj.style.opacity = 1
 	},1)
 	
