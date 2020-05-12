@@ -1,4 +1,5 @@
 
+import { Event } from '/vendor/infrajs/event/Event.js'
 Event.handler('Layer.oncheck', function (layer){
 	
 	var val = Layer.pop(layer,'showanimate');
