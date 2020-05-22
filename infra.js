@@ -13,16 +13,16 @@ import { Controller } from '/vendor/infrajs/controller/src/Controller.js'
 },'showanimate:tpl');*/
 
 Layer.done('show', layer => {
-	if (!Layer.pop(layer, 'showanimate')) return;
+	if (!Layer.pop(layer, 'showanimate')) return
 	
-	var store = Controller.store();
-	if (store.counter == 1) return;
-	var obj = document.getElementById(layer.div);
-	if (!obj) return;
+	var store = Controller.store()
+	//if (layer.showed) return
+	var obj = document.getElementById(layer.div)
+	if (!obj) return
 	obj.style.transition = 'none'
 	obj.style.opacity = 0
 	setTimeout(() => {
-		obj.style.transition = 'opacity 400ms cubic-bezier(0.75, 0, 0.25, 1)'	
+		obj.style.transition = 'opacity 200ms cubic-bezier(0.75, 0, 0.25, 1)'	
 		obj.style.opacity = 1
 	},1)
 	
