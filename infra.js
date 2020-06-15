@@ -21,7 +21,7 @@ Layer.done('show', layer => {
 	
 	//var store = Controller.store()
 	//if (layer.showed) return
-	if (layer.showed && Layer.pop(layer, 'showanimatefastrepase')) return
+	if (layer.showed && Layer.pop(layer, 'showanimatefastreparse')) return
 	div.style.transition = 'none'
 	div.style.opacity = 0
 	setTimeout(() => {
