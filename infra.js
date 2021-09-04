@@ -11,7 +11,8 @@ Layer.done('show', layer => {
 	div.style.transition = 'none'
 	div.style.opacity = 0
 	setTimeout(() => {
-		div.style.transition = 'opacity 500ms cubic-bezier(0.75, 0, 0.25, 1)'	
+		//div.style.transition = 'opacity 500ms cubic-bezier(0.75, 0, 0.25, 1)'	
+		div.style.transition = 'opacity 0.3s'	
 		div.style.opacity = 1
 	}, 1)
 })
